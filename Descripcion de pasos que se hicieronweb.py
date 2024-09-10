@@ -34,13 +34,14 @@ class WebRequestHandler(BaseHTTPRequestHandler):
         self.wfile.write(response_message.encode("utf-8"))
 
         # Imprimir información en la consola
-        if status_code == 200:
-            print(f"Host: {host_header}")
-            print(f"User-Agent: {user_agent_header}")
-            print(f"Requested Path: {requested_path}")
-            print(f"Content-Type: text/html")
-            print(f"Server: Python HTTP Server")
-            print(f"Date: {self.date_time_string()}")
+        print(f"Request:")
+        print(f"  Host: {host_header}")
+        print(f"  User-Agent: {user_agent_header}")
+        print(f"  Requested Path: {requested_path}")
+        print(f"Response:")
+        print(f"  Content-Type: text/html")
+        print(f"  Server: Python HTTP Server")
+        print(f"  Date: {self.date_time_string()}")
 
     def do_POST(self):
         # Respuesta para peticiones POST
